@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="assessment2.css">
+<head>
+    <title>Registration Form</title>    
+</head>
+
+<body>
+    <form>
+        <div class="box">
+            <h1 class="header">Registration Form</h1>
+            <label for="fullname">Full Name</label><br>
+            <input  pattern="[a-zA-Z]*" type="text" id="fullname" name="fullname" placeholder="Enter your fullname"/><br/>
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address" placeholder="Enter your Address"/><br/>
+            <label for="email">Email address</label><br>
+            <input pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" id="email" name="email" placeholder="Enter your email"><br/>
+            <label for="phoneno">Phone Number</label><br>
+            <input pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="tel" id="phoneno" name="phoneno" placeholder="Enter your phone number"/><br/>
+            <label for="password">Password</label><br>
+            <input  type="text" id="password" name="password" placeholder="Enter your password"/><br/>
+            <label for="repass">Comfirm password</label><br>
+            <input  type="text" id="repass" name="repass" placeholder="Re-enter your password" onblur="validatecomfirmpassword()"/><br/>
+            <div class="password"  id="repass_msg">
+            Comfirm password not match. Please try again.
+            </div>
+            <label for="birthdate">Birthday</label><br>
+            <input class="birthdate" type="date" id="birthday" name="birthdate" placeholder="Enter your birthday"/><br/>
+            <label for="language">Language</label><br>
+            <input  type="text" id="language" name="language" placeholder="Enter your language"/><br/>
+            <input type="submit" id="submit" >
+            </div>
+        </div>
+    </form>
+        
+    
+   
+</body>
+<script type="text/javascript">
+    function validatecomfirmpassword(){
+        var passwordEl=document.getElementById("password")            
+        var repassEl=document.getElementById("repass")
+        if (passwordEl.value!=repassEl.value){
+            var repass_msgEl=document.getElementById("repass_msg")
+            repass_msgEl.style.display="block"
+        }
+
+    }
+    
+    
+    
+</script>
+</html>
