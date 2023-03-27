@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Form Validation</title>
+    <link rel='stylesheet' href='form-validation.css' type='text/css' />
+    <script type="text/javascript" src="registration-form.js"></script>
+</head>
+
+<style>
+h1 {
+    margin-left: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form li {
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+form ul li label {
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+form ul li input,
+select,
+span {
+    float: left;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    float: left;
+    width: 350px;
+    height: 150px;
+}
+
+[type="submit"] {
+    clear: left;
+    margin: 20px 0 0 230px;
+    font-size: 18px
+}
+
+p {
+    margin-left: 70px;
+    font-weight: bold;
+}
+
+#message {
+    display: none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}    
+</style>
+
+<body onload="document.registration.passid.focus();">
+    <h1>FSANT-Registration Form</h1>
+    <form name='registration' onSubmit="return formValidation();">
+        <ul>
+            <li><label for="first_name">First Name:</label></li>
+            <li><input type="text" name="first_name" size="50" /></li>
+
+            <li><label for="last_name">Last Name:</label></li>
+            <li><input type="text" name="last_name" size="50" /></li>
+
+            <li><label for="Pass1">Password</label></li>
+            <li><input type="password" name="passid1" size="12"></li>
+
+            <li><label for="repass">Re-enter Password</label></li>
+            <li><input type="password" name="repass1" size="12"></li>
+
+            <li><label for="address">Suburb:</label></li>
+            <li><input type="text" name="address" size="50" /></li>
+
+            <li><label for="zip">ZIP Code:</label></li>
+            <li><input type="text" name="zip" /></li>
+
+            <li><label for="email">Email:</label></li>
+            <li><input type="text" name="email" size="50" /></li>
+
+            <li><label for="birthday">Birthday:</label></li>
+            <li><input type="date" id="birthday" name="birthday"></li>
+
+            <li><form action="/action_page.php">
+                <label for="level">Current Skating Level:</label>
+                <select id="level" name="level">
+                    <option value="Int1">Int 1</option>
+                    <option value="Int2">Int 2</option>
+                    <option value="Free1">Free 1</option>
+                    <option value="Free2">Free 2</option>
+                </select>
+                </form></li>
+
+            <li><input type="submit" name="submit" value="Submit" /></li>
+        </ul>
+
+
+    </form>
+
+
+</body>
+
+</html>
+
+<script>
+    function formValidation() {
+        var passid1 = document.registration.passid1
+        var fname = document.registration.first_name;
+        var lname = document.registration.last_name;
+        var uadd = document.registration.address;
+        var uzip = document.registration.zip;
+        var uemail = document.registration.email; {
+            if (passid_validation(passid1, 7, 12)) {
+                if (allLetter(fname))
+                    if (allLetter1(lname)) {
+                        if (allLetter2(uadd)) {
+                            if (allnumeric(uzip)) {
+                                if (ValidateEmail(uemail)) {
+                                }
+                            }
+
+                        }
+                    }
+            }
+        }
+        return false;
+    } function passid_validation(passid1, mx, my) {
+        var passid_len = passid1.value.length;
+        if (passid_len == 0 || passid_len >= my || passid_len < mx) {
+            alert("Password should not be empty / length be between " + mx + " to " + my);
+            passid1.focus();
+            return false;
+        }
+        return true;
+    }
+
+
+    function allLetter(fname) {
+        var letters = /^[A-Za-z]+$/;
+        if (fname.value.match(letters)) {
+            return true;
+        }
+        else {
+            alert('First name must have alphabet characters only');
+            fname.focus();
+            return false;
+        }
+    }
+
+    function allLetter1(lname) {
+        var letters = /^[A-Za-z]+$/;
+        if (lname.value.match(letters)) {
+            return true;
+        }
+        else {
+            alert('Last name must have alphabet characters only');
+            lname.focus();
+            return false;
+        }
+    }
+
+    function allLetter2(lname) {
+        var letters = /^[A-Za-z]+$/;
+        if (lname.value.match(letters)) {
+            return true;
+        }
+        else {
+            alert('Suburb must be alphabet characters only');
+            uadd.focus();
+            return false;
+        }
+    }
+
+
+    function allnumeric(uzip) {
+        var numbers = /^[0-9]+$/;
+        if (uzip.value.match(numbers)) {
+            return true;
+        }
+        else {
+            alert('ZIP code must have numeric characters only');
+            uzip.focus();
+            return false;
+        }
+    }
+
+    function ValidateEmail(uemail) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (uemail.value.match(mailformat)) {
+            return true;
+        }
+        else {
+            alert("You have entered an invalid email address!");
+            uemail.focus();
+            return false;
+        }
+    }
+
+
+</script>
