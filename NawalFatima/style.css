@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(Image.jpg);
+    background-size: 280%;
+    background-position: -400 0px;
+}
+
+.form {
+   width: 400px;
+   margin: 100px auto 0px auto;
+   align-items: center;
+
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif ;
+}
+.register {
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 2px 15px
+    rgba(0, 0, 0, 0.3);
+  
+} 
+form#register{
+    margin: 40px;
+}
+
+input[type="text"],
+input[type="Tel"],
+input[type="email"],
+input[type="password"]
+{
+    width : 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: 0;
+    background-color: #fff;
+    box-shadow:inset 1px 1px 5px
+    rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"]
+{
+    background-color: rgb(8, 81, 134);
+    color: rgb(196, 196, 196);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow:inset 1px 1px 5px
+    rgba(0, 0, 0, 0.3);
+}
+input[type="submit"]:hover{
+    background-color: rgb(5, 65, 107);
+}  

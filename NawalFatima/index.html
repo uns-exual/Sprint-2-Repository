@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration from</title>
+</head>
+
+<body>
+    <main class="form">
+        <div class="register">
+            <form action="" name="myform" onsubmit="return validateForm(event)" method="post" id="register">
+                <h1>Registration from</h1>
+                <p>
+                    <label for="name">Full name:</label><br>
+                    <input type="text" name="name" placeholder="Enter full name" id="fullname">
+                </p>
+                <p>
+                    <label for="Address">Address:</label><br>
+                    <input type="Text" name="Addresss" placeholder="Address" id="address">
+                </p>
+                <label for="Email">Email:</label><br>
+                <input type="text" name="email" placeholder="Enter Email" id="email">
+                <p>
+                    <label for="password">Password:</label><br>
+                    <input type="password" name="password" placeholder="Enter password" id="password">
+                <div>
+                    <label for="Repeat password">Repeat Password:</label><br>
+                    <input type="password" name="Repeat password" placeholder="Re-enter password" id="Repeat password">
+                </div>
+                </p>
+                <p>
+                    <label for="Telephone number">Telephone number:</label><br>
+                    <input type="tel" name="phone number" placeholder="XX-XXXX-XXXX" id="tel">
+                </p>
+                <p>
+                    <label for="Language">Language:</label><br>
+                    <input type="text" name="Language" placeholder="Enter Language" id="Language">
+                </p><br>
+                <input type="submit" name="submit">
+            </form>
+        </div>
+        
+    </main>
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
