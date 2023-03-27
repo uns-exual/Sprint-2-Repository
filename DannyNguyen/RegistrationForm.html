@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Form Validation</title>
+    <link rel='stylesheet' href='form-validation.css' type='text/css' />
+    <script type="text/javascript" src="registration-form.js"></script>
+</head>
+
+<body onload="document.registration.passid.focus();">
+    <h1>FSANT-Registration Form</h1>
+    <form name='registration' onSubmit="return formValidation();">
+        <ul>
+            <li><label for="first_name">First Name:</label></li>
+            <li><input type="text" name="first_name" size="50" /></li>
+
+            <li><label for="last_name">Last Name:</label></li>
+            <li><input type="text" name="last_name" size="50" /></li>
+
+            <li><label for="Pass1">Password</label></li>
+            <li><input type="password" name="passid1" size="12"></li>
+
+            <li><label for="repass">Re-enter Password</label></li>
+            <li><input type="password" name="repass1" size="12"></li>
+
+            <li><label for="address">Suburb:</label></li>
+            <li><input type="text" name="address" size="50" /></li>
+
+            <li><label for="zip">ZIP Code:</label></li>
+            <li><input type="text" name="zip" /></li>
+
+            <li><label for="email">Email:</label></li>
+            <li><input type="text" name="email" size="50" /></li>
+
+            <li><label for="birthday">Birthday:</label></li>
+            <li><input type="date" id="birthday" name="birthday"></li>
+
+            <li><form action="/action_page.php">
+                <label for="level">Current Skating Level:</label>
+                <select id="level" name="level">
+                    <option value="Int1">Int 1</option>
+                    <option value="Int2">Int 2</option>
+                    <option value="Free1">Free 1</option>
+                    <option value="Free2">Free 2</option>
+                </select>
+                </form></li>
+
+            <li><input type="submit" name="submit" value="Submit" /></li>
+        </ul>
+
+
+    </form>
+
+
+</body>
+
+</html>
